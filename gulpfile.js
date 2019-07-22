@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
+var babel = require("gulp-babel");
 
 
 // Девсервер
@@ -47,6 +48,7 @@ function buildFonts() {
 
 function buildScripts() {
   return src('src/scripts/**/*.js')
+    .pipe(babel({ presets: ['@babel/env']}))
     .pipe(dest('build/scripts/'));
 }
 
