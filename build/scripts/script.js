@@ -1,5 +1,6 @@
 "use strict";
 
-var foo = function foo() {
-  console.log('bar');
-};
+$(document).on('DOMContentLoaded', function () {
+  $('.js-slider').slick({// Параметры слайдера
+  });
+});

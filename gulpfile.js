@@ -7,6 +7,8 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var babel = require("gulp-babel");
+//var webpack = require("webpack");
+
 
 
 // Девсервер
@@ -48,6 +50,7 @@ function buildFonts() {
 
 function buildScripts() {
   return src('src/scripts/**/*.js')
+    //.pipe(webpack({ output: { filename: 'bundle.js' } }))
     .pipe(babel({ presets: ['@babel/env']}))
     .pipe(dest('build/scripts/'));
 }
